@@ -32,11 +32,11 @@ class CustomUser(AbstractUser):
         while CustomUser.objects.filter(slug=random_slug).exists():
             random_slug = slugify(self.first_name + self.last_name + utils.generates_random_id())
         return random_slug
-    def save(Self, *args, **kwargs):
+    def save(self, *args, **kwargs):
         #performs a logic that checks for slug and if not create 
         if not self.slug:
             #create default slug
-            self.slug = random_slug
+            self.slug = self.gen_rand_slug()
         
         # finally save
         super().save(*args, **kwargs)
