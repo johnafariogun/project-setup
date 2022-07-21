@@ -7,4 +7,10 @@ first tasks were:
 - store secret key/ config keys in environemnt variables
 - create apps 
 - configure templates and static folders
+- create CustomUser model
+- create CustomUser Model manager
+- Register CustomUser Model in project settings
+- Create CustomUser model on the Admin site
+- Write tests for the CustomUser model
+# done with this 
 
