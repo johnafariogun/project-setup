@@ -15,7 +15,7 @@ class CustomUser(AbstractUser):
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
-
+    
     objects = CustomUserManager()
     class Meta:
         ordering = ['email']
