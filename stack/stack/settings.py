@@ -39,10 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 3rd party apps
     'django_extensions',
+    'rest_framework',
     #local apps
     "apps.accounts.apps.AccountsConfig",
     "apps.common.apps.CommonConfig",
     "apps.questions.apps.QuestionsConfig",
+    'api.apps.ApiConfig',
+    
 ]
 
 MIDDLEWARE = [
@@ -128,3 +131,11 @@ STATICFILES_DIRS = [BASE_DIR/'static',]
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES':('rest_framework.authentication.SessionAuthentication',
+    'rest_framework.authentication.BasicAuthentication',
+    'rest_framework.authentication.TokenAuthentication'
+    )
+}
+
